@@ -1,7 +1,9 @@
 const router = require('express').Router();
-const appControler = require('../controllers/appControler');
+const appController = require('../controllers/appController');
+const landingController = require('../controllers/landingController');
 
 //linking home page to controller 
-router.get('/', appControler);
+router.get('/', appController);
+router.get('/landing', landingController);
 
 module.exports = router;
