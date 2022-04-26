@@ -1,34 +1,41 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/test');
 
-class League extends Model {
+class Comment extends Model {
   // checkPassword(loginPw) {
   //   return bcrypt.compareSync(loginPw, this.password);
   // }
 }
 
-League.init(
+Comment.init(
   {
     id: {
       type: DataTypes.UUID,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+    //   references: {
+    //       model: "user",
+    //       key: "id"
+    //   }
     },
-    role: {
+    content: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    rank: {
+    user_id: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    user_name: {
-      type: DataTypes.STRING,
-      foreignkey: true,
-      allowNull: false,
+      foreignKey: true,
       references: {
         model: "user",
-        key: "name"
+        key: "id"
+    }
+    },
+    post_id: {
+      type: DataTypes.STRING,
+      foreignKey: true,
+      references: {
+        model: "post",
+        key: "id"
     }
     },
   },
