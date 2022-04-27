@@ -1,6 +1,6 @@
-const db = require("../models");
+const post_db = require("../models");
 
-exports.index = (req, res) => {
+exports.getPost = (req, res) => {
   db.Trip.findAll({
     where: {
       UserId: req.user.id,
