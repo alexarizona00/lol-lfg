@@ -1,9 +1,8 @@
 const router = require('express').Router();
-const landingController = require('../controllers/landingController');
-const isAuth = require('../config/middleware/isAuth');
+const landingController = require('../controllers/landing_controller');
 
 //linking auth to landing page and linking to controller 
-router.get('/', isAuth, landingController.index);
+router.get('/', landingController.index);
 
 
 module.exports = router;
