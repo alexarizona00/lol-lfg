@@ -1,1 +1,1 @@
-exports.index = (req, res) => res.render('home');
+exports.index = (req, res) => res.render('landing.handlebars');

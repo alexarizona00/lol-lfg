@@ -1,29 +1,17 @@
-const post_db = require("../models");
+const db = require("../models");
 
 exports.getPost = (req, res) => {
-  db.Trip.findAll({
-    where: {
-      UserId: req.user.id,
-    },
-  })
-    .then((dbTrip) => {
-      res.render("trips/trips", {
-        layout: "main-trips",
-        trip: dbTrip,
-      });
+  db.posts.findAll()
+    .then((res) => {
+      res.render("app.handlebars")
     })
     .catch((err) => {
-      console.log("No Trips yet");
-      res.render("trips/trips", {
-        layout: "main-trips",
-        trip: [],
-      });
+      console.log("No posts to show");
+      res.render("app.handlebars")
     });
 };
 
-exports.createTrip = (req, res) => {
-  // Add id from User onto req.body
-  req.body.UserId = req.user.id;
-
-  db.Trip.create(req.body).then((dbPost) => res.json(dbPost));
+exports.createPost = (req, res) => {
+  // need to add in how we add the post data to the post. 
+  db.posts.create(req.body).then((dbPost) => res.json(dbPost));
 };
