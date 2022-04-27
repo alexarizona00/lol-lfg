@@ -23,4 +23,4 @@ exports.loginUser = (req, res) => {
 // register a user
 exports.signUpUser = (req, res) => {
   res.json({ redirect: "/" });
-};
+};  
