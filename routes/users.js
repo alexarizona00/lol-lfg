@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const userController = require('../controllers/user_controller');
-const isAuth = require('../config/Unknown(middleware/isAuth)');
+const isAuth = require('../utils/auth');
 
 //linking sign up page with controller 
 router.get('/login', isAuth, userController.registerUser);

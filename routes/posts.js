@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const postController = require('../controllers/posts_controller');
-const isAuth = require('../config/middleware/isAuth');
+const isAuth = require('../utils/auth');
 
 //linking auth to post controller 
-router.get('/', isAuth, postController.index);
+router.get('/', isAuth, postController.getPost);
 //linking auth to unique post controller 
 router.get('/:id', isAuth, postController.getPost);
 //linking new post to post controller 
