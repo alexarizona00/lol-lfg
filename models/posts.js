@@ -10,13 +10,21 @@ Posts.init(
       allowNull: false,
       primaryKey: true
     },
-    post_data: {
+    content: {
       type: DataTypes.STRING,
-    //   allowNull: false,
+      allowNull: false,
+    },
+    role: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    rank: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     time_date: {
       type: DataTypes.DATE,
-    //   allowNull: false,
+      allowNull: false,
     },
     user_id: {
       allowNull: false,
