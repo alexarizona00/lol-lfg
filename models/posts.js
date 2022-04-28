@@ -14,24 +14,19 @@ Posts.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    role: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    rank: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    time_date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
     user_id: {
       allowNull: false,
       references: {
         model: "user",
         key: "id"
     }
+    },
+    user_name: {
+      allowNull: false,
+      references: {
+        model: "user",
+        key: "league_Ign"
+      }
     },
   },
   {
