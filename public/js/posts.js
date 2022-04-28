@@ -86,21 +86,21 @@ const delButtonHandler = async (event) => {
 };
 
 document
-    .querySelector('.create-post')
+    .querySelector('#create-post')
     .addEventListener('submit', newFormHandler);
 
 document
-    .querySelector(`.delete-posts-${id}`)
+    .querySelector('#delete-posts')
     .addEventListener('click', delButtonHandler);
 
 document
-    .querySelector(`.select-posts-${id}`)
-    .addEventListener('click', delButtonHandler);
+    .querySelector('.select-posts')
+    .addEventListener('click', selectPostHandler);
 
 document
-    .querySelector(`.comment-posts-${id}`)
-    .addEventListener('click', delButtonHandler);
+    .querySelector('#comment-posts')
+    .addEventListener('click', commentFormHandler);
 
 document
-    .querySelector(`.edit-posts-${id}`)
-    .addEventListener('click', delButtonHandler);
+    .querySelector('#edit-posts')
+    .addEventListener('click', editPostFormHandler);
