@@ -10,6 +10,10 @@ Posts.init(
       allowNull: false,
       primaryKey: true
     },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     content: {
       type: DataTypes.STRING,
       allowNull: false,
