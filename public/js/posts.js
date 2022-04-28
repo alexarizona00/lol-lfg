@@ -22,7 +22,7 @@ const newFormHandler = async (event) => {
     }
 };
 
-const updateFormHandler = async (event) => {
+const commentFormHandler = async (event) => {
     event.preventDefault();
 
     const content = document.querySelector('#posts-content').value.trim();
@@ -45,7 +45,7 @@ const updateFormHandler = async (event) => {
     }
 };
 
-const editFormHandler = async (event) => {
+const editPostFormHandler = async (event) => {
     event.preventDefault();
 
     const title = document.querySelector('#posts-title').value.trim();
