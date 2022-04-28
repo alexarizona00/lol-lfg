@@ -1,7 +1,7 @@
 const db = require("../models");
 
 //this is the users_controller.js file
-exports.registerUser = (req, res) => {
+exports.registerUser = async (req, res) => {
   try {
     const userData = await User.create(req.body);
 
@@ -65,3 +65,5 @@ exports.loginUser = async (req, res) => {
 exports.signUpUser = (req, res) => {
   res.json({ redirect: "/" });
 };  
+
+exports.userProfile = (req, res) => res.render('profile.handlebars');
