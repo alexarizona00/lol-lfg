@@ -16,9 +16,17 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    league_Ign: {
       type: DataTypes.STRING,
       unique: true,
+      allowNull: false,
+    },
+    role: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    rank: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
     email: {
