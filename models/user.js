@@ -10,9 +10,9 @@ class User extends Model {
 
 User.init(
   {
-    league_Ign: {
+    league_ign: {
       type: DataTypes.STRING,
-      unique: true,
+      primaryKey: true,
       allowNull: false,
     },
     role: {
@@ -54,7 +54,7 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'users',
+    modelName: 'user',
   }
 );
 

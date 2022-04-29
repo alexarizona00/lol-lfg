@@ -11,7 +11,7 @@ if (process.env.JAWSDB_URL) {
     process.env.DB_USER,
     process.env.DB_PASSWORD,
     {
-      host: 'localhost', //change to 127.0.0.1 if on mac
+      host: '127.0.0.1', //change to 127.0.0.1 if on mac
       dialect: 'mysql',
       port: 3306
     }
