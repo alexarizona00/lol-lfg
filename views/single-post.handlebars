@@ -1,21 +1,27 @@
-<div class="card">
-    <div class="card-header  flex-row justify-space-between">
+<div class="card single-post">
+    <div class="card-header flex-row justify-space-between">
         <h2>
-            <a href="/post/{{posts.id}}">
-            <div class="col-8">{{posts.title}}</div>
+            <a class="post-href" href="/post/{{posts.id}}">
+                <div class="post-title">{{posts.title}}</div>
             </a>
         </h2>
-        <div class="col-3">posted by {{posts.user.username}} on {{format_date post.dateCreated}}</div>
-    </div>  
-    <p class="card-body">{{posts.content}}</p>
+        <div class="post-info">
+            Posted by {{posts.user.username}} on {{format_date
+            post.dateCreated}}
+        </div>
+    </div>
+    <p class="card-body single-post-body">
+        {{posts.content}}
+    </p>
 </div>
-<input type="hidden" name="post-id" value="{{posts.id}}"/>
-<div class="card">
-    <div class="card-header"></div>
-    <form class="card-body" id="new-comment-form">
-        <p class="form-label fancy">Comment:</p>
+<input type="hidden" name="post-id" value="{{posts.id}}" />
+<div class="comment-card">
+    <form class="card-body comment-cont" id="new-comment-form">
+        <p class="form-label comment-title">Comment</p>
         <textarea class="form-input" id="comment-body" name="comment-body"></textarea>
-        <button type="submit" class="btn btn-primary" id="comment-post">Submit:</button>
+        <button type="submit" class="single-submit-btn" id="comment-post">
+            Submit
+        </button>
     </form>
     {{>posts.comments}}
 </div>
