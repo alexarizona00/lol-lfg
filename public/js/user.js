@@ -10,7 +10,7 @@ const newFormHandler = async (event) => {
     if (league_Ign && role && rank && email && password) {
         const response = await fetch(`/routes/users`, {
             method: 'POST',
-            body: JSON.stringify({ league_Ign, role, rank, email, password }),
+            body: JSON.stringify({ league_ign, role, rank, email, password }),
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -33,7 +33,7 @@ const delButtonHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/layout/landing');
+            document.location.replace('/layout/landin/');
         } else {
             alert('Failed to delete profile');
         }

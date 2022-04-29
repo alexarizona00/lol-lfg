@@ -16,6 +16,10 @@ exports.registerUser = async (req, res) => {
   }
 };
 
+exports.renderLogin = (req, res) => {
+    res.render("log-sign");
+};
+
 exports.signOutUser = (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
@@ -58,12 +62,9 @@ exports.loginUser = async (req, res) => {
       res.status(400).json(err);
     }
   };
-//   res.json("/");
-// };
 
-// register a user
 exports.signUpUser = (req, res) => {
-  res.json({ redirect: "/" });
+  res.json({ redirect: "/app" });
 };  
 
 exports.userProfile = (req, res) => res.render('profile.handlebars');
