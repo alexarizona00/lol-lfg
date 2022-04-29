@@ -1,15 +1,19 @@
 <div class="card">
-    <h2 class="card-header">Looking For Group Post</h2>
-    <form class="card-body" id="new-post-form">
-        <input type="hidden" name="post-id" value="{{posts.id}}"/>
-        <div>
-            <label class="form-label fancy">Title:</label>
-            <input class="form-input" type="text" name="post-title"/>
-        </div>
-        <div>
-            <label class="form-label fancy">Content:</label>
-            <textarea class="form-textarea form-input" name="post-body" data-number="8"></textarea>
-        </div>
-        <button class="btn btn-primary" id="create-post">CREATE</button>
-    </form>
+  <h2 class="card-header create-title">Create LFG Post</h2>
+  <form class="card-body lfg-body" id="new-post-form">
+    <input type="hidden" name="post-id" value="{{posts.id}}" />
+    <div class="lfg-title-cont">
+      <label class="form-label lfg-info">Title</label>
+      <input class="form-input create-input" type="text" name="post-title" />
+    </div>
+    <div class="textarea-cont">
+      <label class="form-label lfg-info lfg-content">Content</label>
+      <textarea
+        class="form-textarea form-input create-text-area"
+        name="post-body"
+        data-number="8"
+      ></textarea>
+    </div>
+    <button class="create-btn" id="create-post">CREATE</button>
+  </form>
 </div>
