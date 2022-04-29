@@ -6,8 +6,13 @@
     cursor: default;
 }
 
+html {
+    height: 100%;
+}
+
 body {
-    height: auto;
+    margin: 0px;
+    min-height: 100%;
     background-image: url(./images/background1.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -266,4 +271,48 @@ footer {
     animation-iteration-count: infinite;
     -webkit-animation-direction: alternate;
     animation-direction: alternate;
+}
+
+/************** PROFILE STYLE **************/
+
+.card {
+    background: rgb(30, 40, 45);
+    margin-top: 175px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+    border: 2px solid rgb(120, 90, 40);
+    border-radius: 10px;
+}
+
+.profile-header {
+    border: none;
+    padding: 5px;
+}
+
+.form-group {
+    padding: 5px;
+}
+
+.update-btn,
+.delete-btn {
+    color: rgb(240, 230, 210);
+    border: 3px solid rgb(240, 230, 210);
+    font-family: 'Philosopher', sans-serif;
+    background-color: rgb(120, 90, 40);
+    font-size: 150%;
+    letter-spacing: 1px;
+    margin: 5px;
+}
+
+.update-btn:hover,
+.delete-btn:hover {
+    cursor: pointer;
+    background-color: rgb(240, 230, 210);
+    color: rgb(30, 40, 45);
+}
+
+.form-input {
+    cursor: text;
 }
