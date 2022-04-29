@@ -7,14 +7,14 @@
 }
 
 body {
-    height: 925px;
+    height: auto;
     background-image: url(./images/background1.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-/* NAVBAR STYLE */
+/************** NAVBAR STYLE **************/
 
 .navbg {
     background-color: rgb(30, 40, 45);
@@ -46,7 +46,7 @@ body {
     margin-left: 50px;
 }
 
-/* OFFCANVAS NAVBAR STYLE */
+/************** OFFCANVAS NAVBAR STYLE **************/
 
 .offcanvas-end {
     background-color: rgb(30, 40, 45);
@@ -100,7 +100,7 @@ img.nav-link:hover {
     border: 1px solid rgb(120, 90, 40);
 }
 
-/* LOGIN/SIGNUP STYLE */
+/************** LOGIN/SIGNUP STYLE **************/
 
 .log-sign-container {
     background-color: rgb(30, 40, 45);
@@ -126,7 +126,7 @@ label {
 }
 
 input {
-  display: inline-block;
+    display: inline-block;
 }
 
 .sign-log-header {
@@ -149,7 +149,7 @@ input {
     vertical-align: bottom;
 }
 
-/* FOOTER STYLE */
+/************** FOOTER STYLE **************/
 
 footer {
     background-color: rgb(30, 40, 45);
@@ -171,4 +171,99 @@ footer {
 
 .copyright {
     margin-left: 100px;
+}
+
+
+/************** LANDING INTRO STYLE **************/
+
+.landing-card {
+    background: transparent;
+    text-align: center;
+    margin-top: 150px;
+    border: none;
+}
+
+.landing-title {
+    font-family: 'El Messiri', sans-serif;
+    font-size: 400%;
+    color: rgb(120, 90, 40);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.landing-intro {
+    text-align: center;
+}
+
+.landing-caps,
+.landing-text {
+    color: rgb(240, 230, 210);
+    letter-spacing: 2px;
+}
+
+.landing-caps {
+    font-size: 250%;
+}
+
+.landing-text {
+    font-size: 125%;
+}
+
+.landing-image {
+    border: 3px solid rgb(120, 90, 40);
+    border-radius: 10%;
+    margin: 30px;
+}
+
+.landing-signup-btn {
+    color: rgb(240, 230, 210);
+    background-color: rgb(120, 90, 40);
+    border: 3px solid rgb(240, 230, 210);
+    width: 100px;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 150%;
+    letter-spacing: 1px;
+}
+
+.landing-signup-btn:hover {
+    cursor: pointer;
+    background-color: rgb(30, 40, 45);
+}
+
+/************** SIGNUP BUTTON ANIMATION **************/
+
+@-webkit-keyframes pulse-grow-on-hover {
+    to {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+}
+
+@keyframes pulse-grow-on-hover {
+    to {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+}
+
+#signup-btn {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+}
+
+#signup-btn:hover,
+#signup-btn:focus,
+#signup-btn:active {
+    -webkit-animation-name: pulse-grow-on-hover;
+    animation-name: pulse-grow-on-hover;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
 }
