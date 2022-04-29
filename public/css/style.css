@@ -4,19 +4,19 @@
     color: rgb(120, 90, 40);
     font-family: 'Mukta', sans-serif;
     cursor: default;
+    border: none;
 }
 
-html {
-    height: 100%;
+html { 
+    background: url(./images/background1.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 body {
-    margin: 0px;
-    min-height: 100%;
-    background-image: url(./images/background1.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: transparent;
 }
 
 /************** NAVBAR STYLE **************/
@@ -315,4 +315,71 @@ footer {
 
 .form-input {
     cursor: text;
+}
+
+/************** CREATE POST STYLE **************/
+
+.create-title {
+    font-family: 'El Messiri', sans-serif;
+    font-size: 200%;
+    color: rgb(120, 90, 40);
+    font-weight: 700;
+    letter-spacing: 3px;
+    border-bottom: 1px solid rgb(120, 90, 40);
+}
+
+.lfg-info {
+    color: rgb(240, 230, 210);
+    letter-spacing: 2px;
+    font-size: 150%;
+}
+
+.lfg-title-cont {
+    border-bottom: 1px solid rgb(120, 90, 40);
+    padding-bottom: 10px;
+}
+
+.lfg-content {
+    padding-top: 10px;
+}
+
+.textarea-cont textarea {
+    display: block;
+    margin: auto;
+}
+
+.lfg-title-cont input {
+    display: block;
+    margin: auto;
+}
+
+.create-input,
+.create-text-area {
+    width: 500px;
+    border: 1px solid rgb(120, 90, 40);
+}
+
+.create-text-area {
+    height: 250px;
+    resize: none;
+}
+
+.create-btn {
+    color: rgb(240, 230, 210);
+    background-color: rgb(120, 90, 40);
+    border: 3px solid rgb(240, 230, 210);
+    width: 125px;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 150%;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.create-btn:hover {
+    cursor: pointer;
+    background-color: rgb(30, 40, 45);
+}
+
+.lfg-body {
+    padding: 10px;
 }
