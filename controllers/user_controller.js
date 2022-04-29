@@ -1,26 +1,69 @@
 const db = require("../models");
 
 //this is the users_controller.js file
-exports.registrationPage = (req, res) => {
-  res.render("users/registration", {
-    layout: "main-registration",
-  });
+exports.registerUser = async (req, res) => {
+  try {
+    const userData = await User.create(req.body);
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
 };
 
 exports.signOutUser = (req, res) => {
-  req.logout();
-  res.redirect("/");
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
 };
 
 // login
-exports.loginUser = (req, res) => {
-  // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
-  // So we're sending the user back the route to the members page because the redirect will happen on the front end
-  // They won't get this or even be able to access this page if they aren't authed
-  res.json("/");
-};
+exports.loginUser = async (req, res) => {
+    try {
+      const userData = await User.findOne({ where: { email: req.body.email } });
+
+      if (!userData) {
+        res
+          .status(400)
+          .json({ message: 'Incorrect email or password, please try again' });
+        return;
+      }
+
+      const validPassword = await userData.checkPassword(req.body.password);
+
+      if (!validPassword) {
+        res
+          .status(400)
+          .json({ message: 'Incorrect email or password, please try again' });
+        return;
+      }
+
+      req.session.save(() => {
+        req.session.user_id = userData.id;
+        req.session.logged_in = true;
+
+        res.json({ user: userData, message: 'You are now logged in!' });
+      });
+
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  };
+//   res.json("/");
+// };
 
 // register a user
 exports.signUpUser = (req, res) => {
   res.json({ redirect: "/" });
 };  
+
+exports.userProfile = (req, res) => res.render('profile.handlebars');

@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/test');
+const sequelize = require('../config/connection');
 
 class Comment extends Model {
   // checkPassword(loginPw) {
@@ -54,8 +54,8 @@ Comment.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'league',
+    modelName: 'comment',
   }
 );
 
-module.exports = League;
+module.exports = Comment
