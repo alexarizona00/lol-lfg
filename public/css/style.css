@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri&family=Mukta:wght@500&family=Philosopher&display=swap');
+
+* {
+    color: rgb(120, 90, 40);
+    font-family: 'Mukta', sans-serif;
+    cursor: default;
+}
+
+body {
+    height: 925px;
+    background-image: url(./images/background1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* NAVBAR STYLE */
+
+.navbg {
+    background-color: rgb(30, 40, 45);
+    border-bottom: 2px solid rgb(120, 90, 40);
+    height: auto;
+    padding: 0;
+}
+
+.burger-btn {
+    border: 1px solid rgb(120, 90, 40);
+    margin-right: 50px;
+}
+
+.burger-btn:hover {
+    border: 3px solid rgb(120, 90, 40);
+    cursor: pointer;
+}
+
+.fa-bars:hover {
+    cursor: pointer;
+}
+
+.name {
+    font-family: 'El Messiri', sans-serif;
+    font-size: 2.5rem;
+    color: rgb(120, 90, 40);
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-left: 50px;
+}
+
+/* OFFCANVAS NAVBAR STYLE */
+
+.offcanvas-end {
+    background-color: rgb(30, 40, 45);
+    border-left: 2px solid rgb(120, 90, 40);
+    height: 740px;
+}
+
+.nav-link {
+    color: rgb(240, 230, 210);
+    border-bottom: 1px solid rgb(120, 90, 40);
+    width: 330px;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+    color: rgb(120, 90, 40);
+}
+
+img.nav-link {
+    margin-top: 20px;
+    border: 1px solid rgb(120, 90, 40);
+    padding: 0;
+    cursor: default;
+}
+
+img.nav-link:hover {
+    cursor: default;
+}
+
+
+.offcanvas-name {
+    font-family: 'El Messiri', sans-serif;
+    font-size: 2rem;
+    color: rgb(120, 90, 40);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.offcanvas-title {
+    text-align: center;
+    width: 330px;
+    border-bottom: 1px solid rgb(120, 90, 40);
+}
+
+.btn-close {
+    padding: 0;
+}
+
+.btn-close:hover {
+    cursor: pointer;
+    border: 1px solid rgb(120, 90, 40);
+}
+
+/* LOGIN/SIGNUP STYLE */
+
+.log-sign-container {
+    background-color: rgb(30, 40, 45);
+    position: absolute;
+    top: 30%;
+    margin: auto;
+    width: 65%;
+    border: 5px solid rgb(120, 90, 40);
+    padding: 10px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.log-sign {
+    background-color: rgb(30, 40, 45);
+    height: 225px;
+}
+
+label {
+    display: inline-block;
+    width: 250px;
+    text-align: center;
+}
+
+input {
+  display: inline-block;
+}
+
+.sign-log-header {
+    text-align: center;
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 900;
+}
+
+
+.sign-log-btn {
+    width: 150px;
+    margin: auto;
+    background-color: rgb(120, 90, 40);
+    color: rgb(240, 230, 210);
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.btn-center {
+    vertical-align: bottom;
+}
+
+/* FOOTER STYLE */
+
+footer {
+    background-color: rgb(30, 40, 45);
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    border-top: 2px solid rgb(120, 90, 40);
+}
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.social-media {
+    margin-right: 100px;
+}
+
+.copyright {
+    margin-left: 100px;
+}
