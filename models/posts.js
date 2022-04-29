@@ -5,11 +5,7 @@ class Posts extends Model {}
 
 Posts.init(
   {
-    id: {
-      type: DataTypes.UUID,
-      allowNull: false,
-      primaryKey: true
-    },
+
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -24,7 +20,7 @@ Posts.init(
       references: {
         model: "user",
         key: "id"
-    }
+      }
     },
     user_name: {
       type: DataTypes.STRING,

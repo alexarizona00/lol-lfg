@@ -9,15 +9,6 @@ class Comment extends Model {
 
 Comment.init(
   {
-    id: {
-      type: DataTypes.UUID,
-      allowNull: false,
-      primaryKey: true,
-    //   references: {
-    //       model: "user",
-    //       key: "id"
-    //   }
-    },
     content: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -54,7 +45,7 @@ Comment.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comment',
+    modelName: 'comments',
   }
 );
 

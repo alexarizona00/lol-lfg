@@ -10,12 +10,6 @@ class User extends Model {
 
 User.init(
   {
-    id: {
-      type: DataTypes.UUID,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
     league_Ign: {
       type: DataTypes.STRING,
       unique: true,
@@ -60,7 +54,7 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'users',
   }
 );
 

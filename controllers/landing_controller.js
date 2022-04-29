@@ -1,1 +1,5 @@
-exports.index = (req, res) => res.render('landing.handlebars');
+exports.index = (req, res) => 
+{ 
+    console.log("Hey");
+    res.render("landing-page"); 
+}
