@@ -9,7 +9,7 @@ const loginFormHandler = async (event) => {
         // Send a POST request to the API endpoint
         const response = await fetch('/routes/users', {
             method: 'POST',
-            body: JSON.stringify({ league_Ign, password }),
+            body: JSON.stringify({ league_ign, password }),
             headers: { 'Content-Type': 'application/json' },
         });
 
@@ -24,20 +24,22 @@ const loginFormHandler = async (event) => {
 
 const signupFormHandler = async (event) => {
     event.preventDefault();
+    console.log("hey")
 
     const name = document.querySelector('#name-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
 
     if (name && email && password) {
-        const response = await fetch('/routes/user', {
+        const response = await fetch('/routes/users', {
             method: 'POST',
-            body: JSON.stringify({ league_Ign, email, password }),
+            body: JSON.stringify({ league_ign, email, password }),
             headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-            document.location.replace('/layout/app');
+            console.log('hellobeeech')
+            document.location.replace('/app');
         } else {
             alert(response.statusText);
         }
@@ -45,9 +47,9 @@ const signupFormHandler = async (event) => {
 };
 
 document
-    .querySelector('.login-form')
+    .querySelector('#login-form')
     .addEventListener('submit', loginFormHandler);
 
 document
-    .querySelector('.signup-form')
+    .querySelector('#signup-form')
     .addEventListener('submit', signupFormHandler);

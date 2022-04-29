@@ -10,15 +10,9 @@ class User extends Model {
 
 User.init(
   {
-    id: {
-      type: DataTypes.UUID,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    league_Ign: {
+    league_ign: {
       type: DataTypes.STRING,
-      unique: true,
+      primaryKey: true,
       allowNull: false,
     },
     role: {

@@ -9,34 +9,25 @@ class Comment extends Model {
 
 Comment.init(
   {
-    id: {
-      type: DataTypes.UUID,
-      allowNull: false,
-      primaryKey: true,
-    //   references: {
-    //       model: "user",
-    //       key: "id"
-    //   }
-    },
     content: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    user_id: {
+    league_ign: {
       type: DataTypes.STRING,
       foreignKey: true,
       references: {
         model: "user",
-        key: "id"
-    }
+        key: "league_ign"
+      }
     },
-    post_id: {
-      type: DataTypes.STRING,
+    posts_id: {
+      type: DataTypes.INTEGER,
       foreignKey: true,
       references: {
-        model: "post",
+        model: "posts",
         key: "id"
-    }
+      }
     },
   },
   {
@@ -54,7 +45,7 @@ Comment.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comment',
+    modelName: 'comments',
   }
 );
 
