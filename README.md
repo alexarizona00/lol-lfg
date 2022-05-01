@@ -87,7 +87,7 @@ https://github.com/dlzinck
 
 ## Contact me
 
-Alex A. -
+Alex A. - alexarizona00@gmail.com
 Vehbi Y. - yilmazvtc@gmail.com
-Jacob R. -
-Drew Z. -
+Jacob R. - jacobnramirez@gmail.com
+Drew Z. - dlzincktheii@gmail.com
