@@ -1,4 +1,4 @@
-const newFormHandler = async (event) => {
+const newUserHandler = async (event) => {
     event.preventDefault();
 
     const league_Ign = document.querySelector('#user-league-Ign').value.trim();
@@ -24,7 +24,7 @@ const newFormHandler = async (event) => {
     }
 };
 
-const delButtonHandler = async (event) => {
+const delUserHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
 
@@ -39,11 +39,12 @@ const delButtonHandler = async (event) => {
         }
     }
 };
+if (document.querySelector('.edit-profile')) {
+    document
+        .querySelector('.edit-profile')
+        .addEventListener('submit', newUserHandler);
 
-document
-    .querySelector('.edit-profile')
-    .addEventListener('submit', newFormHandler);
-
-document
-    .querySelector('.delete-profile')
-    .addEventListener('click', delButtonHandler);
+    document
+        .querySelector('.delete-profile')
+        .addEventListener('click', delUserHandler);
+}

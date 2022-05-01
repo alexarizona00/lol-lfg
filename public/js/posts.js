@@ -1,4 +1,4 @@
-const newFormHandler = async (event) => {
+const newPostHandler = async (event) => {
     event.preventDefault();
 
     const title = document.querySelector('#posts-title').value.trim();
@@ -69,7 +69,7 @@ const editPostFormHandler = async (event) => {
     }
 };
 
-const delButtonHandler = async (event) => {
+const delPostHandler = async (event) => {
     if (event.target.hasAttribute('post-id')) {
         const id = event.target.getAttribute('post-id');
 
@@ -84,23 +84,25 @@ const delButtonHandler = async (event) => {
         }
     }
 };
+if (document.querySelector('#create-post')) {
+    document
+        .querySelector('#create-post')
+        .addEventListener('submit', newPostHandler);
 
-document
-    .querySelector('#create-post')
-    .addEventListener('submit', newFormHandler);
+    document
+        .querySelector('#delete-posts')
+        .addEventListener('click', delPostHandler);
 
-document
-    .querySelector('#delete-posts')
-    .addEventListener('click', delButtonHandler);
+    document
+        .querySelector('.select-posts')
+        .addEventListener('click', selectPostHandler);
 
-document
-    .querySelector('.select-posts')
-    .addEventListener('click', selectPostHandler);
+    document
+        .querySelector('#comment-posts')
+        .addEventListener('click', commentFormHandler);
 
-document
-    .querySelector('#comment-posts')
-    .addEventListener('click', commentFormHandler);
+    document
+        .querySelector('#edit-posts')
+        .addEventListener('click', editPostFormHandler);
+}
 
-document
-    .querySelector('#edit-posts')
-    .addEventListener('click', editPostFormHandler);
