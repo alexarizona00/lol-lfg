@@ -1,19 +1,30 @@
+
+const landingController = require("../controllers/landing_controller");
+const userController = require("../controllers/user_controller");
+const appController = require("../controllers/app_controller");
+const postsController = require("../controllers/posts_controller");
+// const isAuth = require('../utils/auth');
+
+
+
+
 module.exports = app => {
 
-    //variable for link to route 
-    const express = require('express')
-    const landing = require('./landing');
-    const user = require('./users');
-    const application = require('./app');
-    const posts = require('./posts');
-    // const comments = require('../routes/comment');
-
     //add or remove or change route as needed 
-    app.use('/', landing);
-    app.use('/user', user);
-    app.use('/app', application);
-    app.use('/posts', posts);
-    // appp.use('/comments', comments);
+    // app.get('/user', userController);
+    app.get('/app', appController.index);
+    // app.get('/posts', postsController);
+    // app.get('/comments', comments);
+    app.get('/', landingController.index);
+    //linking sign up page with controller 
+    app.get('/login', userController.renderLogin);
+    app.post('/login', userController.loginUser);
+    app.post('/register', userController.registerUser);
+    //linking logout page with controller 
+    app.post('/logout', userController.signOutUser);
+    //linking profile page with controller 
+    app.get('/profile', userController.userProfile);
+
 
 }
 

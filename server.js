@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 3001;
 
 const sess = {
   secret: "Super secret secret",
+  name: "sess_name",
   cookie: {},
   resave: false,
   saveUninitialized: true,
@@ -35,7 +36,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 require("./routes/index")(app);
 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () =>
     console.log("-------------- Now listening --------------")
   );

@@ -4,27 +4,27 @@ const Comments = require("./comments");
 
 //link for user to post
 User.hasMany(Posts, {
-  foreignKey: "league_ign",
+  foreignKey: "user_id",
 });
 
 Posts.belongsTo(User, {
-  foreignKey: "league_ign",
+  foreignKey: "user_id",
 });
 
-User.hasMany(Comments, {
-  foreignKey: "league_ign",
-});
+// User.hasMany(Comments, {
+//   foreignKey: "league_ign",
+// });
 
 Comments.belongsTo(Posts, {
   foreignKey: "posts_id",
 });
 
-Comments.belongsTo(User, {
-  foreignKey: "league_ign",
-});
+// Comments.belongsTo(User, {
+//   foreignKey: "user_id",
+// });
 
-Posts.hasMany(Comments, {
-  foreignKey: '',
-});
+// Posts.hasMany(Comments, {
+//   foreignKey: '',
+// });
 
 module.exports = { User, Posts, Comments };
