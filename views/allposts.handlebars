@@ -1,8 +1,11 @@
+<form action="/createpost" method="get">
 <div class="row">
     <div class="col-auto">
-        <h2>Welcome {{user.username}}!</h2>
+        <h2>Welcome {{user.league_ign}}!</h2>
+        <button class="create-btn" id="create-post" href="/create-post">CREATE</button>
     </div>
 </div>
+</form>
 <br>
 {{#if posts.length}}
 <div class="card flex-column">

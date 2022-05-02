@@ -1,19 +1,23 @@
 const { Posts } = require('../models');
-const withAuth = require('../utils/auth');
 
 
-exports.getPost = withAuth, async (req, res) => {
+
+exports.getPost = async (req, res) => {
   db.posts.findAll()
     .then((res) => {
-      res.render("app.handlebars")
+      res.render("allposts")
     })
     .catch((err) => {
       console.log("No posts to show");
-      res.render("app.handlebars")
+      res.render("allposts")
     });
 };
 
-exports.createPost = withAuth, async (req, res) => {
+exports.createPost = (req, res) => {
+  res.render("create-post")
+};
+
+exports.updatePost = async (req, res) => {
   try {
     const newPosts = await Posts.create({
       ...req.body,
@@ -24,31 +28,10 @@ exports.createPost = withAuth, async (req, res) => {
   } catch (err) {
     res.status(400).json(err);
   }
+  res.redirect('/app')
 };
 
-exports.updatePost = withAuth, async (req, res) => {
-  try {
-    const postsData = await Posts.findByPk(req.params.id, {
-      include: [
-        {
-          model: Posts,
-          attributes: ['id'],
-        },
-      ],
-    });
-
-    const posts = postsData.get({ plain: true });
-
-    res.render('app', {
-      ...posts,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-};
-
-exports.commentOnPost = withAuth, async (req, res) => {
+exports.commentOnPost = async (req, res) => {
   try {
     const commentData = await Posts.findByPk(req.params.id, {
       include: [
@@ -70,7 +53,7 @@ exports.commentOnPost = withAuth, async (req, res) => {
   }
 };
 
-exports.deletePost = withAuth, async (req, res) => {
+exports.deletePost = async (req, res) => {
   try {
     const postsData = await Posts.destroy({
       where: {
