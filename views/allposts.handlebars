@@ -7,20 +7,19 @@
 </div>
 </form>
 <br>
+{{#each posters as |posts| }}
 <div>
-    {{#each posters as |posts|}}
-    <div class='posts col-md-5'>
+    <div class="posts">
         <p>
-            {{posts.title}}.
+            Title:
+            {{posts.title}}
         </p>
-    </div>
-    <div class='col-md-7'>
         <p>
-            description:
+            Description:
             {{posts.content}}
         </p>
     </div>
-    {{/each}}
 </div>
+{{/each}}
 
 <script src="./js/posts.js"></script>
