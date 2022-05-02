@@ -13,14 +13,14 @@ Comment.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    league_ign: {
-      type: DataTypes.STRING,
-      foreignKey: true,
-      references: {
-        model: "user",
-        key: "league_ign"
-      }
-    },
+    // league_ign: {
+    //   type: DataTypes.STRING,
+    //   foreignKey: true,
+    //   references: {
+    //     model: "user",
+    //     key: "league_ign"
+    //   }
+    // },
     posts_id: {
       type: DataTypes.INTEGER,
       foreignKey: true,

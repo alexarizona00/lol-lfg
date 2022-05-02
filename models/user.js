@@ -10,18 +10,24 @@ class User extends Model {
 
 User.init(
   {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     league_ign: {
       type: DataTypes.STRING,
-      primaryKey: true,
+      // primaryKey: true,
+      unique: true,
       allowNull: false,
     },
     role: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     rank: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     email: {
       type: DataTypes.STRING,

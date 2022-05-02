@@ -13,23 +13,23 @@ Posts.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // user_id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   references: {
-    //     model: "user",
-    //     key: "id"
-    //   }
-    // },
-    league_ign: {
-      type: DataTypes.STRING,
+    user_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
-      foreignKey: true,
       references: {
         model: "user",
-        key: "league_ign"
+        key: "id"
       }
     },
+    // league_ign: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   foreignKey: true,
+    //   references: {
+    //     model: "user",
+    //     key: "league_ign"
+    //   }
+    // },
   },
   {
     sequelize,
