@@ -1,26 +1,26 @@
-const newPostHandler = async (event) => {
-    event.preventDefault();
+// const newPostHandler = async (event) => {
+//     event.preventDefault();
 
-    const title = document.querySelector('#posts-title').value.trim();
-    const content = document.querySelector('#posts-content').value.trim();
-    const username = document.querySelector('#posts-user_name').value.trim()
+//     const title = document.querySelector('#posts-title').value.trim();
+//     const content = document.querySelector('#posts-content').value.trim();
+//     const username = document.querySelector('#posts-user_name').value.trim()
 
-    if (title && content && username) {
-        const response = await fetch(`/routes/posts`, {
-            method: 'POST',
-            body: JSON.stringify({ title, content, username }),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
+//     if (title && content && username) {
+//         const response = await fetch(`/routes/posts`, {
+//             method: 'POST',
+//             body: JSON.stringify({ title, content, username }),
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//         });
 
-        if (response.ok) {
-            document.location.replace('/layout/app');
-        } else {
-            alert('Failed to create posts');
-        }
-    }
-};
+//         if (response.ok) {
+//             document.location.replace('/layout/app');
+//         } else {
+//             alert('Failed to create posts');
+//         }
+//     }
+// };
 
 // const commentFormHandler = async (event) => {
 //     event.preventDefault();
@@ -84,11 +84,11 @@ const newPostHandler = async (event) => {
 //         }
 //     }
 // };
-if (document.querySelector('#create-post')) {
-    document
-        .querySelector('#create-post')
-        .addEventListener('submit', newPostHandler);
-};
+// if (document.querySelector('#create-post')) {
+//     document
+//         .querySelector('#create-post')
+//         .addEventListener('submit', newPostHandler);
+// };
 
 //     document
 //         .querySelector('#delete-posts')

@@ -19,16 +19,16 @@ exports.createPost = (req, res) => {
 
 exports.updatePost = async (req, res) => {
   try {
-    const newPosts = await Posts.create({
-      ...req.body,
-      user_id: req.session.user_id,
-    });
+    const postData = await Posts.create({
+      title: req.body.title,
+      content: req.body.content,
+      user_id: 1,
 
-    res.status(200).json(newPosts);
+    });
+    res.redirect('/app');
   } catch (err) {
     res.status(400).json(err);
   }
-  res.redirect('/app')
 };
 
 exports.commentOnPost = async (req, res) => {
