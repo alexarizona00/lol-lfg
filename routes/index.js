@@ -12,7 +12,7 @@ module.exports = app => {
 
     //add or remove or change route as needed 
     // app.get('/user', userController);
-    app.get('/app', appController.index);
+    app.get('/app', appController.loggedin);
     // app.get('/posts', postsController);
     // app.get('/comments', comments);
     app.get('/', landingController.index);
@@ -21,10 +21,10 @@ module.exports = app => {
     app.post('/login', userController.loginUser);
     app.post('/register', userController.registerUser);
     //linking logout page with controller 
-    app.post('/logout', userController.signOutUser);
+    app.get('/logout', userController.signOutUser);
     //linking profile page with controller 
     app.get('/profile', userController.userProfile);
-
-
+    app.get('/createpost', postsController.createPost);
+    app.post('/createpost', postsController.updatePost);
 }
 
