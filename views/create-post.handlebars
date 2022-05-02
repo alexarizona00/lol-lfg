@@ -1,17 +1,17 @@
 <div class="card">
   <h2 class="card-header create-title">Create LFG Post</h2>
-  <form class="card-body lfg-body" id="new-post-form">
+  <form class="card-body lfg-body" method="post" action="/createpost" id="new-post-form">
     <input type="hidden" name="post-id" value="{{posts.id}}" />
     <div class="lfg-title-cont">
       <label class="form-label lfg-info">Title</label>
-      <input class="form-input create-input" type="text" name="post-title" />
+      <input class="form-input create-input" type="text" name="title" />
     </div>
     <div class="textarea-cont">
       <label class="form-label lfg-info lfg-content">Content</label>
       <textarea
         class="form-textarea form-input create-text-area"
-        name="post-body"
         data-number="8"
+        name="content"
       ></textarea>
     </div>
     <button class="create-btn" id="create-post">CREATE</button>

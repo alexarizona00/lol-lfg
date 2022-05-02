@@ -7,10 +7,20 @@
 </div>
 </form>
 <br>
-{{#if posts.length}}
-<div class="card flex-column">
-    {{#each posts as |post|}}
-    {{> editItem post}}
+<div>
+    {{#each posters as |posts|}}
+    <div class='posts col-md-5'>
+        <p>
+            {{posts.title}}.
+        </p>
+    </div>
+    <div class='col-md-7'>
+        <p>
+            description:
+            {{posts.content}}
+        </p>
+    </div>
     {{/each}}
 </div>
-{{/if}}
+
+<script src="./js/posts.js"></script>

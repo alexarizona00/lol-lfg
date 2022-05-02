@@ -4,7 +4,7 @@ const { User } = require("../models")
 
 //this is the users_controller.js file
 exports.registerUser = async (req, res) => {
-  // create a new category
+  // create a new user
   try {
     const userData = await User.create({
       league_ign: req.body.league_ign,
