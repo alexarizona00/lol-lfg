@@ -3,9 +3,13 @@ const { Posts } = require('../models');
 
 
 exports.getPost = async (req, res) => {
-  db.posts.findAll()
-    .then((res) => {
-      res.render("allposts")
+  Posts.findAll()
+    .then((posts) => {
+      const posters = posts.map((postData) => postData.get({ plain: true }));
+      console.log("hello", posters)
+      res.render("allposts", {
+        posters,
+      });
     })
     .catch((err) => {
       console.log("No posts to show");

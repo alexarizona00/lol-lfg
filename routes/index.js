@@ -13,6 +13,7 @@ module.exports = app => {
     //add or remove or change route as needed 
     // app.get('/user', userController);
     app.get('/app', appController.loggedin);
+    app.get('/posts', postsController.getPost);
     // app.get('/posts', postsController);
     // app.get('/comments', comments);
     app.get('/', landingController.index);
